@@ -1,0 +1,153 @@
+2026-03-17 10:07:36,747 174178 INFO ? odoo: Odoo version 15.0 
+2026-03-17 10:07:36,747 174178 INFO ? odoo: Using configuration file at /home/kyaw-zay/HTS/Odoo15/odoo15/conf/odoo.conf 
+2026-03-17 10:07:36,747 174178 INFO ? odoo: addons paths: ['/home/kyaw-zay/HTS/Odoo15/odoo15/odoo/addons', '/home/kyaw-zay/snap/code/226/.local/share/Odoo/addons/15.0', '/home/kyaw-zay/HTS/Odoo15/odoo15/C:/Odoo/odoo15/custom_addons', '/home/kyaw-zay/HTS/Odoo15/odoo15/C:/Odoo/odoo15/addons'] 
+2026-03-17 10:07:36,747 174178 INFO ? odoo: database: admin@localhost:5432 
+2026-03-17 10:07:36,758 174178 CRITICAL ? odoo.modules.module: Couldn't load module web 
+2026-03-17 10:07:36,758 174178 CRITICAL ? odoo.modules.module: No module named 'odoo.addons.web' 
+2026-03-17 10:07:36,758 174178 ERROR ? odoo.service.server: Failed to load server-wide module `web`.
+The `web` module is provided by the addons found in the `openerp-web` project.
+Maybe you forgot to add those addons in your addons_path configuration. 
+Traceback (most recent call last):
+  File "/home/kyaw-zay/HTS/Odoo15/odoo15/odoo/service/server.py", line 1210, in load_server_wide_modules
+    odoo.modules.module.load_openerp_module(m)
+  File "/home/kyaw-zay/HTS/Odoo15/odoo15/odoo/modules/module.py", line 396, in load_openerp_module
+    __import__('odoo.addons.' + module_name)
+ModuleNotFoundError: No module named 'odoo.addons.web'
+2026-03-17 10:07:36,825 174178 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/bin/wkhtmltopdf 
+2026-03-17 10:07:36,868 174178 CRITICAL ? odoo.modules.module: Couldn't load module base 
+2026-03-17 10:07:36,868 174178 CRITICAL ? odoo.modules.module: module 'lib' has no attribute 'X509_V_FLAG_NOTIFY_POLICY' 
+2026-03-17 10:07:36,868 174178 ERROR ? odoo.service.server: Failed to load server-wide module `base`. 
+Traceback (most recent call last):
+  File "/home/kyaw-zay/HTS/Odoo15/odoo15/odoo/service/server.py", line 1210, in load_server_wide_modules
+    odoo.modules.module.load_openerp_module(m)
+  File "/home/kyaw-zay/HTS/Odoo15/odoo15/odoo/modules/module.py", line 396, in load_openerp_module
+    __import__('odoo.addons.' + module_name)
+  File "/home/kyaw-zay/HTS/Odoo15/odoo15/odoo/addons/base/__init__.py", line 5, in <module>
+    from . import models
+  File "/home/kyaw-zay/HTS/Odoo15/odoo15/odoo/addons/base/models/__init__.py", line 23, in <module>
+    from . import ir_mail_server
+  File "/home/kyaw-zay/HTS/Odoo15/odoo15/odoo/addons/base/models/ir_mail_server.py", line 19, in <module>
+    from OpenSSL import crypto as SSLCrypto
+  File "/home/kyaw-zay/HTS/Odoo15/odoo15-venv/lib/python3.10/site-packages/OpenSSL/__init__.py", line 8, in <module>
+    from OpenSSL import crypto, SSL
+  File "/home/kyaw-zay/HTS/Odoo15/odoo15-venv/lib/python3.10/site-packages/OpenSSL/crypto.py", line 1553, in <module>
+    class X509StoreFlags(object):
+  File "/home/kyaw-zay/HTS/Odoo15/odoo15-venv/lib/python3.10/site-packages/OpenSSL/crypto.py", line 1571, in X509StoreFlags
+    NOTIFY_POLICY = _lib.X509_V_FLAG_NOTIFY_POLICY
+AttributeError: module 'lib' has no attribute 'X509_V_FLAG_NOTIFY_POLICY'
+2026-03-17 10:07:36,870 174178 INFO ? odoo.service.server: HTTP service (werkzeug) running on kyaw-zay-Swift-SF314-59:6060 
+2026-03-17 10:07:36,882 174178 INFO ? odoo.modules.loading: init db 
+2026-03-17 10:07:36,984 174178 ERROR ? odoo.sql_db: bad query: UPDATE ir_module_module SET state='installed' WHERE state IN ('to remove', 'to upgrade')
+ERROR: relation "ir_module_module" does not exist
+LINE 1: UPDATE ir_module_module SET state='installed' WHERE state IN...
+               ^
+ 
+2026-03-17 10:07:36,985 174178 ERROR ? odoo.modules.registry: Failed to load registry 
+2026-03-17 10:07:36,985 174178 CRITICAL ? odoo.service.server: Failed to initialize database `odoo15_db`. 
+Traceback (most recent call last):
+  File "/home/kyaw-zay/HTS/Odoo15/odoo15/odoo/modules/registry.py", line 87, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/home/kyaw-zay/HTS/Odoo15/odoo15/odoo/modules/loading.py", line 396, in load_modules
+    odoo.modules.db.initialize(cr)
+  File "/home/kyaw-zay/HTS/Odoo15/odoo15/odoo/modules/db.py", line 34, in initialize
+    for i in odoo.modules.get_modules():
+  File "/home/kyaw-zay/HTS/Odoo15/odoo15/odoo/modules/module.py", line 435, in get_modules
+    plist.extend(listdir(ad))
+  File "/home/kyaw-zay/HTS/Odoo15/odoo15/odoo/modules/module.py", line 429, in listdir
+    for it in os.listdir(dir)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kyaw-zay/HTS/Odoo15/odoo15/C:/Odoo/odoo15/custom_addons'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kyaw-zay/HTS/Odoo15/odoo15/odoo/service/server.py", line 1260, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module)
+  File "/home/kyaw-zay/HTS/Odoo15/odoo15/odoo/modules/registry.py", line 89, in new
+    odoo.modules.reset_modules_state(db_name)
+  File "/home/kyaw-zay/HTS/Odoo15/odoo15/odoo/modules/loading.py", line 599, in reset_modules_state
+    cr.execute(
+  File "<decorator-gen-3>", line 2, in execute
+  File "/home/kyaw-zay/HTS/Odoo15/odoo15/odoo/sql_db.py", line 89, in check
+    return f(self, *args, **kwargs)
+  File "/home/kyaw-zay/HTS/Odoo15/odoo15/odoo/sql_db.py", line 310, in execute
+    res = self._obj.execute(query, params)
+psycopg2.errors.UndefinedTable: relation "ir_module_module" does not exist
+LINE 1: UPDATE ir_module_module SET state='installed' WHERE state IN...
+               ^
+
+2026-03-17 10:07:46,030 174178 INFO ? odoo.service.server: Initiating shutdown 
+2026-03-17 10:07:46,031 174178 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2026-03-17 10:07:46,378 174178 INFO ? odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 3 connections  
+2026-03-17 10:18:00,737 182591 INFO ? odoo: Odoo version 15.0 
+2026-03-17 10:18:00,737 182591 INFO ? odoo: Using configuration file at /home/kyaw-zay/HTS/Odoo15/odoo15/conf/odoo.conf 
+2026-03-17 10:18:00,737 182591 INFO ? odoo: addons paths: ['/home/kyaw-zay/HTS/Odoo15/odoo15/odoo/addons', '/home/kyaw-zay/snap/code/226/.local/share/Odoo/addons/15.0', '/home/kyaw-zay/HTS/Odoo15/odoo15/C:/Odoo/odoo15/custom_addons', '/home/kyaw-zay/HTS/Odoo15/odoo15/C:/Odoo/odoo15/addons'] 
+2026-03-17 10:18:00,737 182591 INFO ? odoo: database: admin@localhost:5432 
+2026-03-17 10:18:00,748 182591 CRITICAL ? odoo.modules.module: Couldn't load module web 
+2026-03-17 10:18:00,748 182591 CRITICAL ? odoo.modules.module: No module named 'odoo.addons.web' 
+2026-03-17 10:18:00,748 182591 ERROR ? odoo.service.server: Failed to load server-wide module `web`.
+The `web` module is provided by the addons found in the `openerp-web` project.
+Maybe you forgot to add those addons in your addons_path configuration. 
+Traceback (most recent call last):
+  File "/home/kyaw-zay/HTS/Odoo15/odoo15/odoo/service/server.py", line 1210, in load_server_wide_modules
+    odoo.modules.module.load_openerp_module(m)
+  File "/home/kyaw-zay/HTS/Odoo15/odoo15/odoo/modules/module.py", line 396, in load_openerp_module
+    __import__('odoo.addons.' + module_name)
+ModuleNotFoundError: No module named 'odoo.addons.web'
+2026-03-17 10:18:00,812 182591 CRITICAL ? odoo.modules.module: Couldn't load module base 
+2026-03-17 10:18:00,812 182591 CRITICAL ? odoo.modules.module: cannot import name 'utils' from 'PyPDF2' (/home/kyaw-zay/HTS/Odoo15/odoo15-venv/lib/python3.10/site-packages/PyPDF2/__init__.py) 
+2026-03-17 10:18:00,812 182591 ERROR ? odoo.service.server: Failed to load server-wide module `base`. 
+Traceback (most recent call last):
+  File "/home/kyaw-zay/HTS/Odoo15/odoo15/odoo/service/server.py", line 1210, in load_server_wide_modules
+    odoo.modules.module.load_openerp_module(m)
+  File "/home/kyaw-zay/HTS/Odoo15/odoo15/odoo/modules/module.py", line 396, in load_openerp_module
+    __import__('odoo.addons.' + module_name)
+  File "/home/kyaw-zay/HTS/Odoo15/odoo15/odoo/addons/base/__init__.py", line 5, in <module>
+    from . import models
+  File "/home/kyaw-zay/HTS/Odoo15/odoo15/odoo/addons/base/models/__init__.py", line 13, in <module>
+    from . import ir_actions_report
+  File "/home/kyaw-zay/HTS/Odoo15/odoo15/odoo/addons/base/models/ir_actions_report.py", line 27, in <module>
+    from PyPDF2 import PdfFileWriter, PdfFileReader, utils
+ImportError: cannot import name 'utils' from 'PyPDF2' (/home/kyaw-zay/HTS/Odoo15/odoo15-venv/lib/python3.10/site-packages/PyPDF2/__init__.py)
+2026-03-17 10:18:00,816 182591 INFO ? odoo.service.server: HTTP service (werkzeug) running on kyaw-zay-Swift-SF314-59:6060 
+2026-03-17 10:18:00,828 182591 INFO ? odoo.modules.loading: init db 
+2026-03-17 10:18:00,930 182591 ERROR ? odoo.sql_db: bad query: UPDATE ir_module_module SET state='installed' WHERE state IN ('to remove', 'to upgrade')
+ERROR: relation "ir_module_module" does not exist
+LINE 1: UPDATE ir_module_module SET state='installed' WHERE state IN...
+               ^
+ 
+2026-03-17 10:18:00,930 182591 ERROR ? odoo.modules.registry: Failed to load registry 
+2026-03-17 10:18:00,930 182591 CRITICAL ? odoo.service.server: Failed to initialize database `odoo15_db`. 
+Traceback (most recent call last):
+  File "/home/kyaw-zay/HTS/Odoo15/odoo15/odoo/modules/registry.py", line 87, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/home/kyaw-zay/HTS/Odoo15/odoo15/odoo/modules/loading.py", line 396, in load_modules
+    odoo.modules.db.initialize(cr)
+  File "/home/kyaw-zay/HTS/Odoo15/odoo15/odoo/modules/db.py", line 34, in initialize
+    for i in odoo.modules.get_modules():
+  File "/home/kyaw-zay/HTS/Odoo15/odoo15/odoo/modules/module.py", line 435, in get_modules
+    plist.extend(listdir(ad))
+  File "/home/kyaw-zay/HTS/Odoo15/odoo15/odoo/modules/module.py", line 429, in listdir
+    for it in os.listdir(dir)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kyaw-zay/HTS/Odoo15/odoo15/C:/Odoo/odoo15/custom_addons'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kyaw-zay/HTS/Odoo15/odoo15/odoo/service/server.py", line 1260, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module)
+  File "/home/kyaw-zay/HTS/Odoo15/odoo15/odoo/modules/registry.py", line 89, in new
+    odoo.modules.reset_modules_state(db_name)
+  File "/home/kyaw-zay/HTS/Odoo15/odoo15/odoo/modules/loading.py", line 599, in reset_modules_state
+    cr.execute(
+  File "<decorator-gen-3>", line 2, in execute
+  File "/home/kyaw-zay/HTS/Odoo15/odoo15/odoo/sql_db.py", line 89, in check
+    return f(self, *args, **kwargs)
+  File "/home/kyaw-zay/HTS/Odoo15/odoo15/odoo/sql_db.py", line 310, in execute
+    res = self._obj.execute(query, params)
+psycopg2.errors.UndefinedTable: relation "ir_module_module" does not exist
+LINE 1: UPDATE ir_module_module SET state='installed' WHERE state IN...
+               ^
+
+2026-03-17 10:26:03,793 182591 INFO ? odoo.service.server: Initiating shutdown 
+2026-03-17 10:26:03,794 182591 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2026-03-17 10:26:04,266 182591 INFO ? odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 1 connections  
